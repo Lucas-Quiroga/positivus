@@ -1,0 +1,149 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import Card1 from "../assets/images/Card1.png";
+import Card2 from "../assets/images/Card2.png";
+import Card3 from "../assets/images/Card3.png";
+import Card4 from "../assets/images/Card4.png";
+import Card5 from "../assets/images/Card5.png";
+import Card6 from "../assets/images/Card6.png";
+
+type ServiceItem = {
+  title: string;
+  subtitle: string;
+  image: ImageMetadata;
+  variant: "default" | "green" | "black";
+  bg?: string;
+};
+
+const service: ServiceItem[] = [
+  {
+    title: "Search engine",
+    subtitle: "optimization",
+    image: Card1,
+    variant: "default",
+  },
+  {
+    title: "Pay-per-click",
+    subtitle: "advertising",
+    image: Card2,
+    variant: "green",
+  },
+  {
+    title: "Social Media",
+    subtitle: "Marketing",
+    image: Card3,
+    variant: "black",
+  },
+  {
+    title: "Email",
+    subtitle: "Marketing",
+    image: Card4,
+    variant: "default",
+  },
+  {
+    title: "Content",
+    subtitle: "Creation",
+    image: Card5,
+    variant: "green",
+  },
+  {
+    title: "Analytics and",
+    subtitle: "Tracking",
+    image: Card6,
+    variant: "black",
+    bg: "green",
+  },
+];
+---
+
+<section class="services">
+  <div class="services__header">
+    <h2 class="services__header-title">Services</h2><p
+      class="services__header-description"
+    >
+      At our digital marketing agency, we offer a range of services to <br /> help
+      businesses grow and succeed online. These services include:
+    </p>
+  </div>
+
+  <!-- Contenedor de las cards -->
+
+  <div class="container">
+    {
+      service.map((item) => (
+        <ServiceCard
+          title={item.title}
+          subtitle={item.subtitle}
+          image={item.image}
+          variant={item.variant}
+          bg={item.bg}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .services {
+    margin-top: 100px;
+  }
+
+  .services__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .services__header-title {
+    width: 178px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #b9ff66;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .services__header-description {
+    font-size: 18px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    width: inherit;
+  }
+
+  @media (max-width: 575px) {
+    .services__header {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .services__header-title {
+      margin: 0;
+    }
+
+    .services__header-description {
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .container {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
+</style>

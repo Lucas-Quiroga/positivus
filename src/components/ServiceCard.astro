@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import ArrowIcon from "../assets/images/ArrowIcon.png";
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  image: ImageMetadata;
+  variant: "default" | "green" | "black";
+  bg?: string;
+}
+
+const { title, subtitle, image, variant, bg } = Astro.props;
+---
+
+<div class={`services__card services__card--${variant}`}>
+  <div class="services__card-content">
+    <h2 class="services__card-title">
+      <span class={`highlight highlight--${bg}`}>{title} <br /> {subtitle}</span
+      >
+    </h2>
+    <div class="services__card-link">
+      <Image src={ArrowIcon} alt="Icon" width="41" height="41" />
+      <p class="services__card-link-text">Learn more</p>
+    </div>
+  </div>
+  <Image
+    src={image}
+    alt={title}
+    class="services__card-image"
+    width="210"
+    height="170"
+  />
+</div>
+
+<style>
+  .services__card {
+    width: 600px;
+    height: 310px;
+    border-radius: 45px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .services__card--default {
+    background-color: #f3f3f3;
+  }
+
+  .services__card--green {
+    background-color: #b9ff66;
+  }
+
+  .services__card--black {
+    background-color: #000000;
+    color: white;
+  }
+
+  .services__card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: inherit;
+  }
+
+  .highlight {
+    display: inline;
+    line-height: 2.4rem;
+    padding: 0 5px;
+  }
+
+  .services__card--default .highlight {
+    background-color: #b9ff66;
+  }
+
+  .services__card--green .highlight,
+  .services__card--black .highlight {
+    background-color: #ffffff;
+    color: black;
+  }
+
+  .services__card--black .highlight--green {
+    background-color: #b9ff66;
+    color: black;
+  }
+
+  .services__card-title {
+    font-size: 30px;
+    line-height: 28px;
+  }
+
+  .services__card-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .services__card-link-text {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575px) {
+    .services__card {
+      margin: 0 auto;
+      width: 390px;
+      height: 322px;
+      padding: 0;
+    }
+
+    .highlight {
+      font-size: 26px;
+    }
+
+    .services__card-link {
+      margin-right: auto;
+      margin-left: 2rem;
+      width: 41px;
+      height: 41px;
+    }
+    .services__card-link-text {
+      display: none;
+    }
+
+    .services__card-image {
+      width: 165px;
+      height: 129px;
+      margin: 0;
+    }
+  }
+</style>

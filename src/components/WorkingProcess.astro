@@ -1,0 +1,386 @@
+---
+
+---
+
+<section class="working__section">
+  <div class="working__header">
+    <h2 class="working__header-title">Our Working Process</h2><p
+      class="working__header-description"
+    >
+      Step-by-Step Guide to Achieving<br /> Your Business Goals
+    </p>
+  </div>
+  <div class="cards__section"></div>
+</section>
+
+<style is:inline>
+  .working__section {
+    margin: 100px auto;
+  }
+  .working__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .working__header-title {
+    width: 412px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #b9ff66;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .working__header-description {
+    font-size: 18px;
+  }
+
+  .cards__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  .process__card-container--open {
+    width: 100%;
+    height: 279px;
+    border-radius: 45px;
+    background-color: #b9ff66;
+    color: black;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .process__card-header--close,
+  .process__card-header--open {
+    width: 1117px;
+    height: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+
+  .process__card-box--close,
+  .process__card-box--open {
+    width: 702px;
+    display: flex;
+    align-items: center;
+  }
+
+  .process__card-number--close,
+  .process__card-number--open {
+    font-size: 60px;
+  }
+
+  .process__card-title--close,
+  .process__card-title--open {
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+  .process__divider--open {
+    margin: auto;
+    width: 1117px;
+    height: 1px;
+    background-color: black;
+  }
+
+  .process__card-box2--open {
+  }
+
+  .process__card-button--close,
+  .process__card-button--open {
+    width: 58px;
+    height: 58px;
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color: #f3f3f3;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .process__card-footer--open {
+    width: 1117px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .process__card-description--open {
+    font-size: 18px;
+  }
+
+  .process__card-container--close {
+    width: 100%;
+    height: 159px;
+    border-radius: 45px;
+    background-color: #f3f3f3;
+    color: black;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process__card-container--open,
+  .process__card-container--close {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+  }
+
+  .process__card-container--close {
+    max-height: 159px; /* Ajusta esto según la altura de tu encabezado cerrado */
+  }
+
+  .process__card-container--open {
+    max-height: 279px; /* Un valor alto para asegurar que se abra completamente */
+  }
+
+  @media (max-width: 575px) {
+    .working__header {
+      flex-direction: column;
+    }
+
+    .working__header-title {
+      width: 226px;
+      height: 97px;
+      font-size: 36px;
+      line-height: auto;
+      display: inline;
+      margin: 0;
+    }
+
+    .working__header-description {
+      font-size: 16px;
+      line-height: 24px;
+      width: 390px;
+      text-align: center;
+    }
+
+    .process__card-header--close,
+    .process__card-header--open {
+      width: 390px;
+      height: 98px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+    }
+
+    .process__card-container--close {
+      width: 392px;
+      height: 106px;
+    }
+
+    .process__card-container--open {
+      width: 392px;
+      height: 279px;
+    }
+
+    .process__card-box--close,
+    .process__card-box--open {
+      margin: 0;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .process__card-number--close,
+    .process__card-number--open {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .process__card-title--close,
+    .process__card-title--open {
+      font-size: 18px;
+      line-height: auto;
+      margin: 0;
+      width: 203px;
+      height: 46px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    .process__card-button--close,
+    .process__card-button--open {
+      width: 30px;
+      height: 30px;
+      margin: auto;
+      margin-right: 1rem;
+    }
+
+    .process__card-footer--open {
+      width: 390px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .process__card-description--open {
+      font-size: 16px;
+      line-height: 24px;
+      width: 360px;
+      margin: 0;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  interface CardData {
+    id: number;
+    title: string;
+    description: string;
+  }
+
+  const data: CardData[] = [
+    {
+      id: 1,
+      title: "Consultation",
+      description:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 2,
+      title: "Research and Strategy Development",
+      description:
+        "We will conduct thorough research on your industry, competitors, and target audience to identify the best strategies and tactics to achieve your business goals.",
+    },
+    {
+      id: 3,
+      title: "Implementation",
+      description:
+        "We will develop a customized digital marketing strategy tailored to your business needs and goals. Our team will implement the strategy across various channels to reach your target audience and drive results.",
+    },
+    {
+      id: 4,
+      title: "Monitoring and Optimization",
+      description:
+        "We will continuously monitor the performance of your digital marketing campaigns and make adjustments as needed to optimize results. Our goal is to ensure that your campaigns are delivering the best possible ROI.",
+    },
+    {
+      id: 5,
+      title: "Reporting and Analysis",
+      description:
+        "We will provide detailed reports on the performance of your digital marketing campaigns, including key metrics and insights. Our team will analyze the data to identify areas for improvement and refine our strategies for better results.",
+    },
+    {
+      id: 6,
+      title: "Ongoing Support",
+      description:
+        "Our team will provide ongoing support and guidance to help you achieve your business goals. We are committed to your success and will work with you to ensure that your digital marketing efforts are delivering the desired results.",
+    },
+  ];
+
+  const cardsSection = document.querySelector(".cards__section");
+
+  function createCard(item: CardData, isOpen: boolean): HTMLElement {
+    const card = document.createElement("div");
+    card.className = `process__card-container--${isOpen ? "open" : "close"}`;
+    card.setAttribute("data-id", item.id.toString());
+
+    const headerClass = isOpen ? "open" : "close";
+    const buttonClass = isOpen ? "close" : "open";
+    const buttonSymbol = isOpen ? "-" : "+";
+
+    card.innerHTML = `
+    <div class="process__card-header--${headerClass}">
+      <div class="process__card-box--${headerClass}">
+        <div class="process__card-number--${headerClass}">0${item.id}</div>
+        <div class="process__card-title--${headerClass}">${item.title}</div>
+      </div>
+      <div class="process__card-box2--${buttonClass}">
+        <div class="process__card-button--${buttonClass}">${buttonSymbol}</div>
+      </div>
+    </div>
+    ${
+      isOpen
+        ? `
+      <div class="process__divider--open"></div>
+      <div class="process__card-footer--open">
+        <div class="process__card-description--open">${item.description}</div>
+      </div>
+    `
+        : ""
+    }
+  `;
+
+    return card;
+  }
+
+  function renderCards(): void {
+    if (cardsSection) {
+      cardsSection.innerHTML = "";
+      data.forEach((item, index) => {
+        const card = createCard(item, index === 0);
+        cardsSection.appendChild(card);
+      });
+    }
+  }
+
+  function toggleCard(card: HTMLElement): void {
+    const isOpen = card.classList.contains("process__card-container--open");
+    const itemId = card.getAttribute("data-id");
+    const item = data.find((d) => d.id.toString() === itemId);
+    if (!item) return;
+
+    const newCard = createCard(item, !isOpen);
+    if (card.parentNode) {
+      card.parentNode.replaceChild(newCard, card);
+    }
+
+    if (!isOpen) {
+      // Cerrar otras tarjetas abiertas
+      document
+        .querySelectorAll(".process__card-container--open")
+        .forEach((openCard) => {
+          if (openCard !== newCard) {
+            const openCardId = openCard.getAttribute("data-id");
+            const item = data.find((d) => d.id.toString() === openCardId);
+            if (item && openCard.parentNode) {
+              openCard.parentNode.replaceChild(
+                createCard(item, false),
+                openCard
+              );
+            }
+          }
+        });
+
+      // Animar la apertura
+      requestAnimationFrame(() => {
+        newCard.style.maxHeight = `${newCard.scrollHeight}px`;
+      });
+    }
+  }
+
+  function handleCardClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (
+      target.classList.contains("process__card-button--open") ||
+      target.classList.contains("process__card-button--close")
+    ) {
+      const card = target.closest(
+        ".process__card-container--open, .process__card-container--close"
+      ) as HTMLElement | null;
+      if (card) {
+        toggleCard(card);
+      }
+    }
+  }
+
+  renderCards();
+  cardsSection?.addEventListener("click", handleCardClick);
+</script>

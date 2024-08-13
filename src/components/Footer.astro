@@ -1,0 +1,235 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/images/Logo.png";
+import LinkedinIconWhite from "../assets/images/LinkedinIconWhite.png";
+import FacebookIcon from "../assets/images/FacebookIcon.png";
+import TwitterIcon from "../assets/images/TwitterIcon.png";
+---
+
+<footer class="footer__section">
+  <div class="footer__section-header">
+    <div class="footer__section-header-content">
+      <Image src={Logo} alt="Logo" class="Logo" />
+      <ul class="footer__section-list">
+        <li>About us</li>
+        <li>Services</li>
+        <li>Use Cases</li>
+        <li>Pricing</li>
+        <li>Blog</li>
+      </ul>
+      <div class="footer__section-iconsmedias">
+        <Image src={LinkedinIconWhite} alt="LinkedinIcon" />
+        <Image src={FacebookIcon} alt="LinkedinIcon" />
+        <Image src={TwitterIcon} alt="LinkedinIcon" />
+      </div>
+    </div>
+
+    <div class="footer__section-contact">
+      <div class="footer__section-info">
+        <div class="footer__section-info-data">
+          <p>Contact us:</p>
+        </div>
+        <div class="footer__section-data">
+          <p>Email: info@positivus.com</p>
+          <p>Phone: 555-567-8901</p>
+          <div class="footer__section-adress">
+            <p>Adress: 1234 Main St</p>
+            <p>Moonstone City. Stardust State 12345</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__section-suscribe">
+        <input type="text" placeholder="Email" />
+        <button>Suscribe to news</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer__section-bottom">
+    <p>© 2023 Positivus. All Rights Reserved.</p>
+    <ul class="footer__section-bottom-ul">
+      <li>Privacy Policy</li>
+    </ul>
+  </div>
+</footer>
+<style>
+  .footer__section {
+    height: 514px;
+    background-color: #191a23;
+    margin: auto;
+    border-radius: 45px 45px 0 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 60px 50px 60px;
+  }
+
+  .footer__section-header {
+    display: flex;
+    flex-direction: column;
+    width: 1121px;
+    height: 281px;
+    margin: auto;
+    gap: 66px;
+    padding: 0px 0px 50px 0px;
+  }
+
+  .footer__section-header-content {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+  }
+
+  .footer__section-list {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+  }
+  .footer__section-list li {
+    color: white;
+    text-decoration: underline;
+    font-size: 18px;
+  }
+
+  .footer__section-iconsmedias {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .Logo {
+    color: white;
+    filter: invert(1);
+  }
+
+  .footer__section-contact {
+    height: 185px;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+  }
+
+  .footer__section-info {
+    width: 332px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__section-info-data {
+    width: 126px;
+    height: 26px;
+    background-color: #b9ff66;
+    text-align: center;
+    border-radius: 7px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__section-info-data p {
+    font-size: 20px;
+    color: #000000;
+  }
+
+  .footer__section-data {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0%;
+    gap: 0;
+  }
+
+  .footer__section-data p {
+    color: white;
+    font-size: 18px;
+  }
+
+  .footer__section-adress {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__section-adress p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__section-suscribe {
+    width: 634px;
+    height: 184px;
+    border-radius: 14px;
+    display: flex;
+    gap: 20px;
+    padding: 58 40px;
+    background-color: #292a32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__section-suscribe input {
+    width: 285px;
+    height: 67px;
+    background-color: inherit;
+    border: 1px solid white;
+    border-radius: 14px;
+  }
+
+  .footer__section-suscribe input::placeholder {
+    color: white;
+    font-size: 18px;
+    padding-left: 35px;
+  }
+
+  .footer__section-suscribe button {
+    width: 249px;
+    height: 68px;
+    background-color: #b9ff66;
+    border: none;
+    border-radius: 14px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .footer__section-bottom {
+    display: flex;
+    justify-content: start;
+    width: 1120px;
+    height: 78px;
+    margin: auto;
+    border-top: 1px solid #ffffff;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer__section-bottom p {
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: auto;
+  }
+
+  .footer__section-bottom-ul {
+    display: flex;
+    padding: 0;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .footer__section-bottom-ul li {
+    text-decoration: underline;
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+  }
+</style>

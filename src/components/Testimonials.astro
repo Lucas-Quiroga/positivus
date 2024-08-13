@@ -1,0 +1,356 @@
+---
+import { Image } from "astro:assets";
+import CanvaTestimonial from "../assets/images/CanvaTestimonial.png";
+import ArrowLeftOff from "../assets/images/ArrowLeftOff.png";
+import ArrowRightWhite from "../assets/images/ArrowRightWhite.png";
+---
+
+<section class="testimonials__container">
+  <header class="testimonials__header">
+    <h2 class="testimonials__header-title">Testimonials</h2>
+    <p class="testimonials__header-description">
+      Hear from Our Satisfied Clients: Read Our Testimonials <br /> to Learn More
+      about Our Digital Marketing Services
+    </p>
+  </header>
+
+  <div class="testimonials__box">
+    <div class="testimonials__content">
+      <div class="testimonials__content-cards">
+        <div class="testimonials__card-prev">
+          <div class="testimonials__card-header">
+            <Image
+              class="testimonials__canva"
+              src={CanvaTestimonial}
+              alt={"canva"}
+            />
+            <div class="testimonials__description"></div>
+          </div>
+          <div class="testimonials__footer">
+            <div class="testimonials__title"></div>
+            <div class="testimonials__subtitle"></div>
+          </div>
+        </div>
+        <div class="testimonials__card-current">
+          <div class="testimonials__card-header">
+            <Image
+              class="testimonials__canva"
+              src={CanvaTestimonial}
+              alt={"canva"}
+            />
+            <div class="testimonials__description"></div>
+          </div>
+          <div class="testimonials__footer">
+            <div class="testimonials__title"></div>
+            <div class="testimonials__subtitle"></div>
+          </div>
+        </div>
+        <div class="testimonials__card-next">
+          <div class="testimonials__card-header">
+            <Image
+              class="testimonials__canva"
+              src={CanvaTestimonial}
+              alt={"canva"}
+            />
+            <div class="testimonials__description"></div>
+          </div>
+          <div class="testimonials__footer">
+            <div class="testimonials__title"></div>
+            <div class="testimonials__subtitle"></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials__navigation">
+        <Image
+          class="testimonials__arrow-left"
+          src={ArrowLeftOff}
+          alt={"arrowLeft"}
+        />
+        <div class="testimonials__starts-box"></div>
+        <Image
+          class="testimonials__arrow-right"
+          src={ArrowRightWhite}
+          alt={"arrowRight"}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const testimonials: {
+    name: string;
+    subtitle: string;
+    description: string;
+  }[] = [
+    {
+      name: "John Smith",
+      subtitle: "Marketing Director at XYZ Corp",
+      description:
+        "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
+    },
+    {
+      name: "Jane Doe",
+      subtitle: "CEO at ABC Inc",
+      description:
+        "Positivus has been an invaluable partner in our digital marketing strategy. They have helped us increase our online visibility and drive more traffic to our website. The team is knowledgeable, proactive, and always willing to go the extra mile to help us achieve our goals. We are extremely satisfied with their services and would recommend them to anyone looking to improve their online presence.",
+    },
+    {
+      name: "Michael Brown",
+      subtitle: "Marketing Manager at 123 Company",
+      description:
+        "Working with Positivus has been a game-changer for our business. Their expertise in SEO, PPC, and content marketing has helped us reach new audiences and grow our online presence. The team is dedicated, responsive, and always looking for ways to improve our digital marketing strategy. We are thrilled with the results and look forward to continuing our partnership with Positivus.",
+    },
+    {
+      name: "Emily Johnson",
+      subtitle: "Digital Marketing Specialist at Acme Corp",
+      description:
+        "Positivus is a top-notch digital marketing agency that delivers results. They have helped us increase our online visibility, drive more traffic to our website, and generate more leads for our business. The team is knowledgeable, professional, and easy to work with. We highly recommend Positivus to anyone looking to take their digital marketing to the next level.",
+    },
+  ];
+
+  const imageSources = {
+    arrowLeftOff: "src/assets/images/ArrowLeftOff.png",
+    arrowLeftWhite: "src/assets/images/ArrowLeftWhite.png",
+    arrowRightOff: "src/assets/images/ArrowRightOff.png",
+    arrowRightWhite: "src/assets/images/ArrowRightWhite.png",
+    starGreen: "src/assets/images/StarGreen.png",
+    starWhite: "src/assets/images/StarWhite.png",
+  };
+
+  // Función para seleccionar elementos
+  function selectElements() {
+    return {
+      arrowLeft: document.querySelector(
+        ".testimonials__arrow-left"
+      ) as HTMLImageElement,
+      arrowRight: document.querySelector(
+        ".testimonials__arrow-right"
+      ) as HTMLImageElement,
+      testimonialCurrent: {
+        description: document.querySelector(
+          ".testimonials__card-current .testimonials__description"
+        ) as HTMLDivElement,
+        title: document.querySelector(
+          ".testimonials__card-current .testimonials__title"
+        ) as HTMLDivElement,
+        subtitle: document.querySelector(
+          ".testimonials__card-current .testimonials__subtitle"
+        ) as HTMLDivElement,
+      },
+      testimonialPrev: {
+        description: document.querySelector(
+          ".testimonials__card-prev .testimonials__description"
+        ) as HTMLDivElement,
+        title: document.querySelector(
+          ".testimonials__card-prev .testimonials__title"
+        ) as HTMLDivElement,
+        subtitle: document.querySelector(
+          ".testimonials__card-prev .testimonials__subtitle"
+        ) as HTMLDivElement,
+      },
+      testimonialNext: {
+        description: document.querySelector(
+          ".testimonials__card-next .testimonials__description"
+        ) as HTMLDivElement,
+        title: document.querySelector(
+          ".testimonials__card-next .testimonials__title"
+        ) as HTMLDivElement,
+        subtitle: document.querySelector(
+          ".testimonials__card-next .testimonials__subtitle"
+        ) as HTMLDivElement,
+      },
+      starsContainer: document.querySelector(
+        ".testimonials__starts-box"
+      ) as HTMLDivElement,
+    };
+  }
+
+  const {
+    arrowLeft,
+    arrowRight,
+    testimonialCurrent,
+    testimonialPrev,
+    testimonialNext,
+    starsContainer,
+  } = selectElements();
+
+  let currentIndex = 0;
+
+  function updateTestimonialElements(
+    { description, name, subtitle }: (typeof testimonials)[number],
+    targetElements: typeof testimonialCurrent
+  ) {
+    targetElements.description.textContent = description;
+    targetElements.title.textContent = name;
+
+    targetElements.subtitle.textContent = subtitle;
+  }
+
+  function changeTestimonial(index: number) {
+    const { name, subtitle, description } = testimonials[index];
+    updateTestimonialElements(
+      { name, subtitle, description },
+      testimonialCurrent
+    );
+
+    const prevIndex = (index - 1 + testimonials.length) % testimonials.length;
+    const nextIndex = (index + 1) % testimonials.length;
+    updateTestimonialElements(testimonials[prevIndex], testimonialPrev);
+    updateTestimonialElements(testimonials[nextIndex], testimonialNext);
+
+    const isAtStart = index === 0;
+    const isAtEnd = index === testimonials.length - 1;
+
+    arrowLeft.src = isAtStart
+      ? imageSources.arrowLeftOff
+      : imageSources.arrowLeftWhite;
+    arrowRight.src = isAtEnd
+      ? imageSources.arrowRightOff
+      : imageSources.arrowRightWhite;
+
+    renderStars(index);
+  }
+
+  function renderStars(index: number) {
+    starsContainer.innerHTML = "";
+    for (let i = 0; i < testimonials.length; i++) {
+      const star = document.createElement("img");
+      star.src = i <= index ? imageSources.starGreen : imageSources.starWhite;
+      star.alt = `star ${i}`;
+      starsContainer.appendChild(star);
+    }
+  }
+
+  function nextTestimonial() {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    changeTestimonial(currentIndex);
+  }
+
+  function prevTestimonial() {
+    currentIndex =
+      (currentIndex - 1 + testimonials.length) % testimonials.length;
+    changeTestimonial(currentIndex);
+  }
+
+  arrowLeft.addEventListener("click", prevTestimonial);
+  arrowRight.addEventListener("click", nextTestimonial);
+
+  changeTestimonial(currentIndex);
+</script>
+
+<style>
+  .testimonial__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 4rem;
+  }
+
+  .testimonials__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .testimonials__header-title {
+    width: 255px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #b9ff66;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .testimonials__header-description {
+    font-size: 18px;
+  }
+
+  .testimonials__box {
+    height: 625px;
+    background-color: #191a23;
+    overflow: hidden;
+    border-radius: 45px;
+    margin: auto;
+  }
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: inherit;
+    position: relative;
+  }
+
+  .testimonials__content-cards {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .testimonials__card-header {
+    position: relative;
+    display: inline-block;
+  }
+  .testimonials__canva {
+    display: block;
+  }
+
+  .testimonials__description {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+    text-align: start;
+    width: 502px;
+  }
+
+  .testimonials__footer {
+    margin-top: 1rem;
+    margin-right: 12rem;
+    postion: relative;
+    right: 4rem;
+    width: inherit;
+  }
+  .testimonials__title,
+  .testimonials__subtitle {
+    font-size: 18px;
+  }
+
+  .testimonials__title {
+    color: #b9ff66;
+  }
+  .testimonials__subtitle {
+    color: #ffffff;
+  }
+
+  .testimonials__navigation {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: auto;
+    transform: translateY(16rem);
+    width: inherit;
+  }
+
+  .testimonials__arrow-left,
+  .testimonials__arrow-right {
+    cursor: pointer;
+  }
+
+  .testimonials__starts-box {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

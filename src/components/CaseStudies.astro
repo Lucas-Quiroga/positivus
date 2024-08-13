@@ -1,0 +1,162 @@
+---
+import { Image } from "astro:assets";
+import ArrowIcon from "../assets/images/ArrowIcon.png";
+
+const info: { description: string }[] = [
+  {
+    description:
+      "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
+  },
+  {
+    description:
+      "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
+  },
+  {
+    description:
+      "For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.",
+  },
+];
+---
+
+<section class="studies">
+  <div class="studies__header">
+    <h2 class="studies__header-title">Case Studies</h2><p
+      class="studies__header-description"
+    >
+      Explore Real-Life Examples of Our Proven Digital Marketing <br /> help Success
+      through Our Case Studies
+    </p>
+  </div>
+
+  <div class="container">
+    {
+      info.map((item, index) => (
+        <div class={`studies__card ${index > 0 ? "hidden-mobile" : ""}`}>
+          <div class="studies__card-header">
+            <p class="studies__card-description">{item.description}</p>
+            <div class="studies__card-bottom">
+              <p class="studies__card-link">Learn more</p>
+              <Image src={ArrowIcon} alt="arrowIcon" />
+            </div>
+          </div>
+          {index < info.length - 1 && <div class="studies__divider" />}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .studies__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .studies__header-title {
+    width: 265px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #b9ff66;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .studies__header-description {
+    font-size: 18px;
+  }
+
+  .container {
+    display: flex;
+
+    height: 326px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 46px;
+    gap: 40px;
+    padding: 0 4rem;
+    background-color: #191a23;
+    color: #ffffff;
+    margin: auto;
+  }
+
+  .studies__card {
+    width: 286px;
+    display: flex;
+  }
+
+  .studies__card-description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .studies__card-bottom {
+    display: flex;
+    align-items: center;
+  }
+
+  .studies__card-link {
+    color: #b9ff66;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .studies__divider {
+    width: 1px;
+    height: inherit;
+    background-color: #ffffff;
+    position: relative;
+    left: 6rem;
+  }
+
+  @media (max-width: 575px) {
+    .container {
+      margin: 10px;
+    }
+
+    .studies__header {
+      flex-direction: column;
+    }
+    .studies__header-title {
+      width: 240px;
+      height: 46px;
+      font-size: 36px;
+      line-height: auto;
+      margin: 0;
+    }
+
+    .studies__header-description {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .studies__card {
+      width: 350px;
+      height: 252px;
+      border-radius: 45px;
+    }
+
+    .studies__card-header {
+      margin: auto;
+    }
+
+    .studies__card-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .studies__divider {
+      display: none;
+    }
+
+    .hidden-mobile {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import CtaImg from "../assets/images/Cta.png";
+---
+
+<section class="cta__container">
+  <div class="cta__container-info">
+    <h2 class="cta__container-title">Let’s make things happen</h2>
+    <p class="cta__container-description">
+      Contact us today to learn more about how our digital <br /> marketing services
+      can help your business grow and <br /> succeed online.
+    </p>
+    <div class="cta__container-button">Get your free proposal</div>
+  </div>
+
+  <div class="cta__container-img">
+    <Image
+      src={CtaImg}
+      alt="cta"
+      class="cta__container-img"
+      width="494"
+      height="394"
+    />
+  </div>
+</section>
+
+<script>
+  const button = document.querySelector(
+    ".cta__container-button"
+  ) as HTMLElement;
+
+  const mediaQuery = window.matchMedia("(max-width: 575px)");
+
+  if (mediaQuery.matches) {
+    button.textContent = "Get your proposal";
+  }
+</script>
+
+<style>
+  .cta__container {
+    height: 347px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 45px;
+    margin: 100px auto;
+  }
+
+  .cta__container-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 9rem;
+  }
+
+  .cta__container-title {
+    font-size: 30px;
+  }
+
+  .cta__container-description {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cta__container-button {
+    background-color: black;
+    width: 231px;
+    height: 68px;
+    border-radius: 14px;
+    border: 1px solid black;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 575px) {
+    .cta__container {
+      width: 390px;
+      height: 370px;
+    }
+
+    .cta__container-info {
+      margin: auto;
+      padding: 50px 50px;
+      gap: 20px;
+    }
+
+    .cta__container-title {
+      font-size: 26px;
+      margin: 0;
+    }
+
+    .cta__container-description {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    .cta__container-button {
+      width: 290px;
+      height: 68px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .cta__container-img {
+      display: none;
+    }
+  }
+</style>

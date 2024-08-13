@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import HeroImg from "../assets/images/heroImg.png";
+import CompanyLogo from "../assets/images/CompanyLogo.png";
+---
+
+<main>
+  <section class="hero">
+    <div class="hero_content">
+      <h1 class="hero_title">
+        Navigating the <br /> digital landscape <br /> for success
+      </h1>
+      <p class="hero_description">
+        Our digital marketing agency helps businesses <br /> grow and succeed online
+        through a range of <br /> services including SEO, PPC, social media marketing,<br
+        />
+        and content creation.
+      </p>
+      <button class="hero_btn">Book a consultation</button>
+    </div>
+    <Image src={HeroImg} alt="hero" class="img_logo" loading="eager" />
+  </section>
+  <div class="hero__marquee">
+    <div class="marquee__content">
+      <Image src={CompanyLogo} alt="Compañias" loading={"eager"} />
+      <Image src={CompanyLogo} alt="Compañias" loading={"eager"} />
+      <Image src={CompanyLogo} alt="Compañias" loading={"eager"} />
+      <Image src={CompanyLogo} alt="Compañias" loading={"eager"} />
+    </div>
+  </div>
+</main>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 70px 0;
+  }
+
+  .img_loco {
+    width: 600px;
+    height: 515px;
+  }
+
+  .hero_content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .hero_title {
+    font-size: 60px;
+    margin: 0;
+  }
+
+  .hero_description {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .hero_btn {
+    width: 264px;
+    height: 68px;
+    border-radius: 14px;
+    background: #191a23;
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero_btn:hover {
+    background: #b9ff66;
+    color: #191a23;
+  }
+
+  .hero__marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .marquee__content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 60s linear infinite;
+  }
+
+  .marquee__content img {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between images */
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .hero {
+      flex-direction: column;
+      padding: 0 0 70px 0;
+    }
+
+    .hero_content {
+      gap: 20px;
+      padding-top: 30px;
+    }
+
+    .hero_title {
+      font-size: 43px;
+    }
+
+    .hero_description {
+      font-size: 16px;
+      text-align: start;
+      padding: 0 10px;
+    }
+
+    .hero_btn {
+      width: 100%;
+    }
+
+    .img_logo {
+      width: 361.44px;
+      height: 310px;
+      padding-top: 20px;
+    }
+  }
+</style>

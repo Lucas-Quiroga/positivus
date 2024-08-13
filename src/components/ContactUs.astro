@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+import ContactImage from "../assets/images/ContactImg.png";
+---
+
+<section class="contact__container">
+  <header class="contact__header">
+    <h2 class="contact__header-title">Contact Us</h2>
+    <p class="contact__header-description">
+      Connect with Us: Let's Discuss Your <br /> Digital Marketing Needs
+    </p>
+  </header>
+
+  <div class="contact__box">
+    <div class="contact__box-column1">
+      <div class="contact__form-radios">
+        <div class="contact__box-column1-radio1">
+          <input
+            type="radio"
+            name="say-hi"
+            checked
+            class="contact__box-radio"
+          />
+          <label for="say-hi" class="contact__box-radio-label">Say Hi</label>
+        </div>
+        <div class="contact__box-column1-radio2">
+          <input type="radio" name="get-quote" class="contact__box-radio" />
+          <label for="get-quote" class="contact__box-radio-label"
+            >Get a Quote</label
+          >
+        </div>
+      </div>
+      <form class="contact__form">
+        <div class="contact__form-divs">
+          <label class="contact__form-label">Name</label>
+          <input type="text" placeholder="Name" class="contact__form-input" />
+        </div>
+        <div class="contact__form-divs">
+          <label class="contact__form-label">Email*</label>
+          <input type="email" placeholder="Email" class="contact__form-input" />
+        </div>
+        <div class="contact__form-divs">
+          <label class="contact__form-label">Message*</label>
+          <textarea placeholder="Message" class="contact__form-textarea"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="contact__form-button">
+          <p class="contact__form-button-text">Send Message</p>
+        </button>
+      </form>
+    </div>
+    <div class="contact__box-column2">
+      <Image src={ContactImage} alt="Contact Image" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 4rem 0;
+  }
+  .contact__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-right: auto;
+    gap: 40px;
+  }
+
+  .contact__header-title {
+    width: 229px;
+    height: 51px;
+    border-radius: 7px;
+    background-color: #b9ff66;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+  }
+
+  .contact__header-description {
+    font-size: 18px;
+  }
+
+  .contact__box {
+    display: flex;
+    width: 100%;
+    height: 773px;
+    border-radius: 45px;
+    background-color: #f3f3f3;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact__box-column1 {
+    display: flex;
+    width: 556px;
+    height: 663px;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: column;
+    padding-left: 100px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+  }
+
+  .contact__form-radios {
+    display: flex;
+    gap: 2rem;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .contact__box-radio {
+    border-radius: 50%;
+  }
+
+  .contact__box-radio-label {
+    font-size: 18px;
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 28px;
+  }
+
+  .contact__form-divs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__form-label {
+    font-size: 16px;
+    line-height: 28px;
+    fill: black;
+  }
+
+  .contact__form-input {
+    height: 59px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact__form-textarea {
+    width: 100%;
+    height: 190px;
+    border-radius: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact__form-input,
+  .contact__form-textarea::placeholder {
+    padding-left: 30px;
+    font-size: 18px;
+    fill: #898989;
+    margin: auto 0;
+  }
+
+  .contact__form-button {
+    max-width: 100%;
+    height: 68px;
+    border-radius: 14px;
+    background-color: #000000;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .contact__form-button-text {
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .contact__box-column2 {
+    display: flex;
+    width: 50px;
+    height: 648px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    transform: translate(50%, 0%);
+  }
+</style>

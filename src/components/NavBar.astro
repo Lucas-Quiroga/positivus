@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/images/Logo.png";
+import LogoMobil from "../assets/images/LogoMobil.png";
+import BurgerIcon from "../assets/images/BurgerIcon.png";
+---
+
+<nav>
+  <Image src={Logo} alt="logo" loading={"eager"} class="nav__logo" />
+  <Image src={LogoMobil} alt="logo" loading={"eager"} class="nav__logo-mobil" />
+  <Image
+    src={BurgerIcon}
+    alt="logo"
+    loading={"eager"}
+    class="nav__logo-burger"
+  />
+  <div class="div_items">
+    <ul class="nav__items-ul">
+      <li><a href="/about">About us</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/use-cases">Use Cases</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+    <div class="btn_div">Request a quote</div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .nav__logo-mobil,
+  .nav__logo-burger {
+    display: none;
+  }
+
+  .div_items {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .btn_div {
+    width: 231px;
+    height: 68px;
+    border-radius: 14px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 575px) {
+    nav {
+      height: 23.61px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 20px 5px;
+    }
+
+    .nav__logo {
+      display: none;
+    }
+
+    .nav__logo-mobil {
+      display: block;
+    }
+
+    .nav__logo-burger {
+      display: block;
+      margin-left: auto;
+    }
+
+    .nav__items-ul {
+      display: none;
+    }
+
+    .btn_div {
+      display: none;
+    }
+  }
+</style>
