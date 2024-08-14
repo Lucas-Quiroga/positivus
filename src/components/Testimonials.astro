@@ -93,19 +93,19 @@ import ArrowRightWhite from "../assets/images/ArrowRightWhite.png";
       name: "Jane Doe",
       subtitle: "CEO at ABC Inc",
       description:
-        "Positivus has been an invaluable partner in our digital marketing strategy. They have helped us increase our online visibility and drive more traffic to our website. The team is knowledgeable, proactive, and always willing to go the extra mile to help us achieve our goals. We are extremely satisfied with their services and would recommend them to anyone looking to improve their online presence.",
+        "Positivus has been an invaluable partner in our digital marketing strategy. They have helped us increase our online visibility and drive more traffic to our website. The team is knowledgeable, proactive, and always willing to go the extra mile to help us achieve our goals.",
     },
     {
       name: "Michael Brown",
       subtitle: "Marketing Manager at 123 Company",
       description:
-        "Working with Positivus has been a game-changer for our business. Their expertise in SEO, PPC, and content marketing has helped us reach new audiences and grow our online presence. The team is dedicated, responsive, and always looking for ways to improve our digital marketing strategy. We are thrilled with the results and look forward to continuing our partnership with Positivus.",
+        "Working with Positivus has been a game-changer for our business. Their expertise in SEO, PPC, and content marketing has helped us reach new audiences and grow our online presence. The team is dedicated, responsive, and always looking for ways to improve our digital marketing strategy.",
     },
     {
       name: "Emily Johnson",
       subtitle: "Digital Marketing Specialist at Acme Corp",
       description:
-        "Positivus is a top-notch digital marketing agency that delivers results. They have helped us increase our online visibility, drive more traffic to our website, and generate more leads for our business. The team is knowledgeable, professional, and easy to work with. We highly recommend Positivus to anyone looking to take their digital marketing to the next level.",
+        "Positivus is a top-notch digital marketing agency that delivers results. They have helped us increase our online visibility, drive more traffic to our website, and generate more leads for our business. The team is knowledgeable, professional, and easy to work with.",
     },
   ];
 
@@ -352,5 +352,65 @@ import ArrowRightWhite from "../assets/images/ArrowRightWhite.png";
   .testimonials__starts-box {
     display: flex;
     gap: 1rem;
+  }
+
+  @media (max-width: 575px) {
+    .testimonials__header {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .testimonials__header-title {
+      font-size: 36px;
+      line-height: normal;
+      width: 231px;
+      height: 46px;
+    }
+
+    .testimonials__header-description {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .testimonials__box {
+      width: 390px;
+      height: 554px;
+    }
+
+    .testimonials__card-current {
+      width: 330px;
+      height: 390px;
+      padding: 30px 30px 60px 30px;
+    }
+
+    .testimonials__canva {
+      width: 330px;
+      height: 326px;
+    }
+
+    .testimonials__description {
+      font-size: 16px;
+      line-height: 24px;
+      width: 270px;
+      height: 240px;
+    }
+
+    .testimonials__footer {
+      padding-left: 2rem;
+    }
+
+    .testimonials__title,
+    .testimonials__subtitle {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .testimonials__navigation {
+      width: 330px;
+      height: 14px;
+      gap: 3rem;
+      transform: translateY(14.5rem);
+    }
   }
 </style>

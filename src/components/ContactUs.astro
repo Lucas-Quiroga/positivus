@@ -196,4 +196,39 @@ import ContactImage from "../assets/images/ContactImg.png";
     right: 0;
     transform: translate(50%, 0%);
   }
+
+  @media (max-width: 575px) {
+    .contact__header {
+      flex-direction: column;
+      text-align: center;
+      margin: 0;
+    }
+
+    .contact__header-title {
+      width: 208px;
+      height: 46px;
+      font-size: 36px;
+      line-height: normal;
+      margin: 0;
+    }
+
+    .contact__header-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .contact__box {
+      width: 390px;
+      height: 540px;
+      flex-direction: column;
+    }
+
+    .contact__box-column1 {
+      padding: 0;
+    }
+
+    .contact__box-column2 {
+      display: none;
+    }
+  }
 </style>

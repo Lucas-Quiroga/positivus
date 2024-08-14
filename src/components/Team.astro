@@ -72,8 +72,8 @@ const data: TeamProps[] = [
   </header>
   <div class="section__cards">
     {
-      data.map((item) => (
-        <article class="card">
+      data.map((item, index) => (
+        <article class={`card ${index > 3 ? "card-hidden" : ""}`}>
           <div class="card__container">
             <div class="card__header">
               <img class="card__image" src={item.image.src} alt={item.name} />
@@ -211,5 +211,67 @@ const data: TeamProps[] = [
     text-align: center;
     margin-left: auto;
     margin-right: 3rem;
+  }
+
+  @media (max-width: 575px) {
+    .team__header {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .team__header-title {
+      font-size: 36px;
+      line-height: normal;
+      width: 105px;
+      height: 46px;
+      margin: 0;
+    }
+
+    .team__header-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .section__cards {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      width: 390px;
+      height: 318px;
+    }
+
+    .card__container {
+      padding: 40px 35px;
+    }
+
+    .card__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .card__subtitle {
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    .card__description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .card-hidden {
+      display: none;
+    }
+
+    .team__button {
+      width: 390px;
+      margin: auto;
+      height: 68px;
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 </style>
