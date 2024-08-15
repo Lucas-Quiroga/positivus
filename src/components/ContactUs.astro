@@ -105,8 +105,8 @@ import ContactImage from "../assets/images/ContactImg.png";
     display: flex;
     width: 556px;
     height: 663px;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding-left: 100px;
     box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
@@ -219,12 +219,50 @@ import ContactImage from "../assets/images/ContactImg.png";
 
     .contact__box {
       width: 390px;
-      height: 540px;
+      height: 600px;
       flex-direction: column;
     }
 
     .contact__box-column1 {
-      padding: 0;
+      padding: 0px 30px;
+      margin: 0;
+    }
+
+    .contact__form-radios {
+      width: 286px;
+      height: 28px;
+      margin: 0;
+      padding: 0 30px;
+    }
+
+    .contact__form {
+      width: 390px;
+      height: auto;
+      padding: 0 30px;
+    }
+
+    .contact__box-radio-label {
+      font-size: 16px;
+    }
+
+    .contact__form-label {
+      font-size: 14px;
+    }
+
+    .contact__form-textarea {
+      width: 330px;
+      height: 132px;
+    }
+
+    .contact__form-input,
+    .contact__form-textarea::placeholder {
+      padding-left: 15px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .contact__form-button {
+      height: 68px;
     }
 
     .contact__box-column2 {

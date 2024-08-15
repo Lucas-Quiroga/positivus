@@ -45,6 +45,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
       </div>
     </div>
   </div>
+
   <div class="footer__section-bottom">
     <p>© 2023 Positivus. All Rights Reserved.</p>
     <ul class="footer__section-bottom-ul">
@@ -231,5 +232,152 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     color: white;
     font-size: 18px;
     line-height: 28px;
+  }
+
+  @media (max-width: 575px) {
+    .footer__section {
+      border-radius: 0;
+      width: 100%;
+      height: 945px;
+      margin: auto;
+      padding: 50px 20px 30px 20px;
+    }
+
+    .footer__section-header {
+      gap: 10px;
+      padding: 0;
+      width: 100%;
+      height: inherit;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .footer__section-header-content {
+      flex-direction: column;
+      gap: 30px;
+      height: initial;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      max-width: 100%; /* Asegura que el contenido no exceda el ancho del contenedor */
+      max-height: 100%; /* Asegura que el contenido no exceda la altura del contenedor */
+      box-sizing: border-box;
+    }
+
+    .Logo {
+      width: 144px;
+      height: 30px;
+    }
+
+    .footer__section-list {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      width: 79px;
+      height: auto;
+      box-sizing: border-box;
+      margin: auto;
+    }
+
+    .footer__section-list li {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .footer__section-contact {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .footer__section-info {
+      gap: 10px;
+      height: auto;
+    }
+
+    .footer__section-info-data {
+      width: 115px;
+      height: 23px;
+      margin: auto;
+      & p {
+        font-size: 18px;
+        line-height: normal;
+        margin: 0;
+      }
+    }
+
+    .footer__section-data {
+      width: 295px;
+      height: 110px;
+      text-align: center;
+      justify-content: center;
+      margin: auto;
+      gap: 10px;
+      & p {
+        font-size: 16px;
+
+        margin: 0;
+      }
+    }
+
+    .footer__section-suscribe {
+      flex-direction: column;
+      width: 390px;
+      height: 261px;
+      gap: 22px;
+
+      & input {
+        margin: 30px 30px 0px 30px;
+        width: 330px;
+        height: 66px;
+
+        &::placeholder {
+          font-size: 16px;
+          line-height: 24px;
+          padding-left: 25px;
+        }
+      }
+
+      & button {
+        margin: 0px 30px 30px 30px;
+        width: 330px;
+        height: 66px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+    .footer__section-bottom {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      height: 150px;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      & p {
+        width: 288px;
+        height: 24px;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+      }
+    }
+
+    .footer__section-bottom-ul {
+      width: 107px;
+      height: 24px;
+      margin: 0;
+
+      & li {
+        font-size: 16px;
+        line-height: 24px;
+        list-style: none;
+      }
+    }
   }
 </style>

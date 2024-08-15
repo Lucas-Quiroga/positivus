@@ -6,14 +6,21 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
 ---
 
 <nav>
-  <Image src={Logo} alt="logo" loading={"eager"} class="nav__logo" />
-  <Image src={LogoMobil} alt="logo" loading={"eager"} class="nav__logo-mobil" />
-  <Image
-    src={BurgerIcon}
-    alt="logo"
-    loading={"eager"}
-    class="nav__logo-burger"
-  />
+  <div class="nav__header">
+    <Image src={Logo} alt="logo" loading={"eager"} class="nav__logo" />
+    <Image
+      src={LogoMobil}
+      alt="logo"
+      loading={"eager"}
+      class="nav__logo-mobil"
+    />
+    <Image
+      src={BurgerIcon}
+      alt="logo"
+      loading={"eager"}
+      class="nav__logo-burger"
+    />
+  </div>
   <div class="div_items">
     <ul class="nav__items-ul">
       <li><a href="/about">About us</a></li>
@@ -79,6 +86,14 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
       justify-content: space-between;
       margin: 0;
       padding: 20px 5px;
+      flex-direction: column;
+    }
+
+    .nav__header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      background-color: red;
     }
 
     .nav__logo {
@@ -92,10 +107,23 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
     .nav__logo-burger {
       display: block;
       margin-left: auto;
+      cursor: pointer;
+    }
+
+    .div_items {
+      width: 100%;
+      background-color: green;
+      justify-content: center;
+      display: flex;
+      margin: auto;
     }
 
     .nav__items-ul {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      background-color: red;
+      width: 100%;
     }
 
     .btn_div {
@@ -103,3 +131,15 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
     }
   }
 </style>
+
+<script>
+  const iconBurger = document.querySelector(".nav__logo-burger");
+  const navItems = document.querySelector(".nav__items-ul") as HTMLUListElement;
+
+  if (iconBurger) {
+    iconBurger.addEventListener("click", () => {
+      navItems.style.display =
+        navItems.style.display === "none" ? "flex" : "none";
+    });
+  }
+</script>
