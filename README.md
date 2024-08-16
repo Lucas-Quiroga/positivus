@@ -8,7 +8,7 @@ Bienvenido a “Positivus”, una landing page elegante y funcional diseñada es
 
 ### Demo 👁‍🗨
 
-- [VER EN VIVO](https://template-ecommerce-rosy.vercel.app/) - Website
+- [VER EN VIVO](https://positivus-azure.vercel.app/) - Website
 
 ## Características destacadas ⭐
 
