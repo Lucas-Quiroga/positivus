@@ -31,7 +31,9 @@ const info: { description: string }[] = [
   <div class="container">
     {
       info.map((item, index) => (
-        <div class={`studies__card ${index > 0 ? "hidden-mobile" : ""}`}>
+        <div
+          class={`studies__card studies__card-${index} ${index > 0 ? "hidden-mobile" : ""}`}
+        >
           <div class="studies__card-header">
             <p class="studies__card-description">{item.description}</p>
             <div class="studies__card-bottom">
@@ -39,7 +41,6 @@ const info: { description: string }[] = [
               <Image src={ArrowIcon} alt="arrowIcon" />
             </div>
           </div>
-          {index < info.length - 1 && <div class="studies__divider" />}
         </div>
       ))
     }
@@ -47,11 +48,15 @@ const info: { description: string }[] = [
 </section>
 
 <style>
+  .studies {
+    margin: 50px 0;
+  }
+
   .studies__header {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin: auto;
+    margin: 20px auto;
     gap: 40px;
   }
 
@@ -73,7 +78,6 @@ const info: { description: string }[] = [
 
   .container {
     display: flex;
-
     height: 326px;
     justify-content: space-between;
     align-items: center;
@@ -88,34 +92,67 @@ const info: { description: string }[] = [
   .studies__card {
     width: 286px;
     display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #191a23;
+    transition: color 0.4s ease;
+    cursor: pointer;
+  }
+
+  .studies__card::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, #b9ff66 50%, transparent 50%);
+    transition:
+      top 0.5s ease,
+      left 0.5s ease;
+    z-index: 0;
+  }
+
+  .studies__card:hover::before {
+    top: 0;
+    left: 0;
+  }
+
+  .studies__card:hover :nth-child(1) {
+    color: #191a23;
+  }
+
+  .studies__card-header {
+    position: relative;
+    z-index: 1;
   }
 
   .studies__card-description {
     font-size: 18px;
     line-height: 28px;
+    padding: 20px;
   }
 
   .studies__card-bottom {
     display: flex;
     align-items: center;
+    justify-content: space-around;
   }
 
   .studies__card-link {
     color: #b9ff66;
     font-size: 20px;
     line-height: 28px;
-  }
 
-  .studies__divider {
-    width: 1px;
-    height: inherit;
-    background-color: #ffffff;
-    position: relative;
-    left: 6rem;
+    &:hover {
+      text-decoration: underline;
+      color: #191a23;
+    }
   }
 
   @media (max-width: 575px) {
     .container {
+      padding: 0;
       margin: 10px;
     }
 
@@ -137,9 +174,12 @@ const info: { description: string }[] = [
     }
 
     .studies__card {
-      width: 350px;
-      height: 252px;
+      width: 100%;
+      height: 100%;
       border-radius: 45px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     .studies__card-header {

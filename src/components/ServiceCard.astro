@@ -20,7 +20,13 @@ const { title, subtitle, image, variant, bg } = Astro.props;
       >
     </h2>
     <div class="services__card-link">
-      <Image src={ArrowIcon} alt="Icon" width="41" height="41" />
+      <Image
+        src={ArrowIcon}
+        alt="Icon"
+        width="41"
+        height="41"
+        class="services__card-icon"
+      />
       <p class="services__card-link-text">Learn more</p>
     </div>
   </div>
@@ -42,6 +48,14 @@ const { title, subtitle, image, variant, bg } = Astro.props;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .services__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .services__card--default {
@@ -94,6 +108,15 @@ const { title, subtitle, image, variant, bg } = Astro.props;
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .services__card-icon {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .services__card-link:hover .services__card-icon {
+    transform: translateX(5px);
   }
 
   .services__card-link-text {

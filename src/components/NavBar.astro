@@ -23,11 +23,11 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
   </div>
   <div class="div_items">
     <ul class="nav__items-ul">
-      <li><a href="/about">About us</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/use-cases">Use Cases</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/blog">Blog</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Use Cases</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Blog</a></li>
     </ul>
     <div class="btn_div">Request a quote</div>
   </div>
@@ -39,7 +39,11 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
+  }
+
+  .nav__logo {
+    cursor: pointer;
   }
 
   .nav__logo-mobil,
@@ -67,6 +71,11 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
 
   li {
     list-style: none;
+    transition: transform 0.3s ease;
+  }
+
+  li:hover {
+    transform: scale(1.1);
   }
 
   .btn_div {
@@ -77,6 +86,11 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
   }
 
   @media (max-width: 575px) {
@@ -93,7 +107,7 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
       display: flex;
       justify-content: space-between;
       width: 100%;
-      background-color: red;
+      height: auto;
     }
 
     .nav__logo {
@@ -122,8 +136,38 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
       display: flex;
       flex-direction: column;
       z-index: 100;
-      background-color: red;
+      background-color: #191a23;
+
       width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      gap: 20px;
+      max-height: 0; /* Inicialmente oculta */
+      overflow: hidden; /* Oculta el contenido desbordado */
+      transition: max-height 0.5s ease-out; /* Transición suave */
+      color: white;
+
+      & li {
+        padding: 10px 0px;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+
+        &:hover {
+          background-color: rgb(75, 75, 75);
+
+          width: 100%;
+        }
+
+        & a {
+          color: white;
+        }
+      }
+    }
+
+    .nav__items-ul.open {
+      max-height: 500px; /* Ajusta según el contenido */
     }
 
     .btn_div {
@@ -133,13 +177,14 @@ import BurgerIcon from "../assets/images/BurgerIcon.png";
 </style>
 
 <script>
-  const iconBurger = document.querySelector(".nav__logo-burger");
-  const navItems = document.querySelector(".nav__items-ul") as HTMLUListElement;
+  document.addEventListener("DOMContentLoaded", () => {
+    const iconBurger = document.querySelector(".nav__logo-burger");
+    const navItems = document.querySelector(".nav__items-ul");
 
-  if (iconBurger) {
-    iconBurger.addEventListener("click", () => {
-      navItems.style.display =
-        navItems.style.display === "none" ? "flex" : "none";
-    });
-  }
+    if (iconBurger && navItems) {
+      iconBurger.addEventListener("click", () => {
+        navItems.classList.toggle("open");
+      });
+    }
+  });
 </script>

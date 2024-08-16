@@ -1,54 +1,40 @@
-# Astro Starter Kit: Basics
+# Positivus Landing Page Design 📢
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido a “Positivus”, una landing page elegante y funcional diseñada especialmente para agencias de marketing digital.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Vista Previa 📷
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![web](https://res.cloudinary.com/dncmrwppr/image/upload/v1723836558/image_12_ktmge8.jpg)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Demo 👁‍🗨
 
-## 🚀 Project Structure
+- [VER EN VIVO](https://template-ecommerce-rosy.vercel.app/) - Website
 
-Inside of your Astro project, you'll see the following folders and files:
+## Características destacadas ⭐
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Diseño Moderno y Atractivo: Captura la atención de tus clientes potenciales con un diseño limpio y contemporáneo.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- Totalmente Personalizable: Aprovecha las herramientas intuitivas de Figma para adaptar la plantilla a tus necesidades.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Eficiencia Máxima: El diseño automático de Figma facilita y agiliza el proceso creativo.
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Compatibilidad Multidispositivo: Ofrece una experiencia de usuario óptima en todos los dispositivos, con versiones para escritorio y móvil.
 
-## 🧞 Commands
+- Navegación Intuitiva: Secciones claramente definidas para mostrar servicios, casos de éxito y miembros del equipo de tu agencia.
 
-All commands are run from the root of the project, from a terminal:
+## Agradecimientos 💌
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Este diseño fue creado por Olga Averchenko. Puedes ver más de su trabajo en su [perfil de Figma](https://www.figma.com/@olgaaverchenko).
 
-## 👀 Want to learn more?
+## Fuente del Diseño en Figma 🎨
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Puedes acceder al diseño original en Figma en el siguiente enlace: [Diseño](https://www.figma.com/community/file/1230604708032389430/positivus-landing-page-design).
+
+## Tecnologías Utilizadas 💻
+
+Este proyecto fue desarrollado utilizando:
+
+- Astro
+- Vanilla CSS
+- Javascript
+- Typescript

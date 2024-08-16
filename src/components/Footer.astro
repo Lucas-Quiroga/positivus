@@ -55,7 +55,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
 </footer>
 <style>
   .footer__section {
-    height: 514px;
+    height: auto;
     background-color: #191a23;
     margin: auto;
     border-radius: 45px 45px 0 0;
@@ -63,6 +63,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    gap: 40px;
     justify-content: center;
     align-items: center;
     padding: 55px 60px 50px 60px;
@@ -104,9 +105,19 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     gap: 1rem;
   }
 
+  .footer__section-iconsmedias img {
+    transition: transform 0.3s ease;
+  }
+
+  .footer__section-iconsmedias img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
   .Logo {
     color: white;
     filter: invert(1);
+    cursor: pointer;
   }
 
   .footer__section-contact {
@@ -159,8 +170,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     display: flex;
     flex-direction: column;
   }
-
-  .footer__section-adress p {
+  footer__section-iconsmedias .footer__section-adress p {
     margin: 0;
     padding: 0;
   }
@@ -200,6 +210,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     border-radius: 14px;
     font-size: 20px;
     line-height: 28px;
+    cursor: pointer;
   }
 
   .footer__section-bottom {
@@ -232,6 +243,12 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
     color: white;
     font-size: 18px;
     line-height: 28px;
+    transition: transform 0.3s ease;
+  }
+
+  li:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 
   @media (max-width: 575px) {
@@ -241,6 +258,7 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
       height: 945px;
       margin: auto;
       padding: 50px 20px 30px 20px;
+      gap: 0px;
     }
 
     .footer__section-header {
@@ -259,8 +277,8 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
       justify-content: center;
       align-items: center;
       margin: 0;
-      max-width: 100%; /* Asegura que el contenido no exceda el ancho del contenedor */
-      max-height: 100%; /* Asegura que el contenido no exceda la altura del contenedor */
+      max-width: 100%;
+      max-height: 100%;
       box-sizing: border-box;
     }
 
@@ -348,6 +366,12 @@ import TwitterIcon from "../assets/images/TwitterIcon.png";
         font-size: 20px;
         line-height: 28px;
       }
+    }
+
+    .footer__section-suscribe button:hover {
+      background: #b9ff66;
+      color: #191a23;
+      cursor: pointer;
     }
 
     .footer__section-bottom {

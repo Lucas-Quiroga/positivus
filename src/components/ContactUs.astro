@@ -62,14 +62,14 @@ import ContactImage from "../assets/images/ContactImg.png";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 50px 0;
     padding: 4rem 0;
   }
   .contact__header {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-right: auto;
+    margin: 20px auto 20px 0px;
     gap: 40px;
   }
 
@@ -109,7 +109,7 @@ import ContactImage from "../assets/images/ContactImg.png";
     align-items: center;
     flex-direction: column;
     padding-left: 100px;
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    box-sizing: border-box;
   }
 
   .contact__form-radios {
@@ -177,6 +177,15 @@ import ContactImage from "../assets/images/ContactImg.png";
     background-color: #000000;
     text-align: center;
     cursor: pointer;
+  }
+
+  .contact__form-button:hover {
+    background: #b9ff66;
+    color: #191a23;
+  }
+
+  .contact__form-button:hover .contact__form-button-text {
+    color: #191a23;
   }
 
   .contact__form-button-text {

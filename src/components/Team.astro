@@ -102,11 +102,15 @@ const data: TeamProps[] = [
 </section>
 
 <style>
+  .team__container {
+    margin: 50px 0;
+  }
+
   .team__header {
     display: flex;
     align-items: center;
     justify-content: start;
-    margin: auto;
+    margin: 20px auto;
     gap: 40px;
   }
 
@@ -130,7 +134,7 @@ const data: TeamProps[] = [
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
+    gap: 10px;
   }
 
   .card {
@@ -140,6 +144,14 @@ const data: TeamProps[] = [
     height: 331px;
     margin: auto;
     display: flex;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .card__container {
@@ -211,6 +223,12 @@ const data: TeamProps[] = [
     text-align: center;
     margin-left: auto;
     margin-right: 3rem;
+
+    &:hover {
+      background: #b9ff66;
+      color: #191a23;
+      cursor: pointer;
+    }
   }
 
   @media (max-width: 575px) {
