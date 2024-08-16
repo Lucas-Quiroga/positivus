@@ -5,4 +5,7 @@ export default defineConfig({
   image: {
     service: squooshImageService(),
   },
+
+  site: "https://positivus-azure.vercel.app/",
+  base: "/",
 });
